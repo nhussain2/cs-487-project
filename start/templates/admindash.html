@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <title>Harold's Chicken</title>
+  </head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color:#DC3545
+    ">
+        <a class="navbar-brand" href="/"><img src="/static/logo1.png"  height=40px></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+        </div>
+      </nav>
+      <div class="container-fluid" style="margin-top: 20px;">
+          <h4>Admin Dashboard</h4>
+          <hr/>
+          <div class="row">
+            <div class="col-lg">
+              <h5>Items Purchased by Quantity</h5>
+              <table class="table table-dark">
+                <thead>
+                  <tr>
+                    <th scope="col">Item Name</th>
+                    <th scope="col">Quantity Sold</th></tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    {% for i in items %}
+                    <td> {{i.item_name}}</td>
+                    <td> {{i.amount_purchased}}</td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+            <div class="col-lg">
+              <h5>Orders</h5>
+              <table class="table table-dark">
+                <thead>
+                  <tr>
+                    <th scope="col">Order ID</th>
+                    <th scope="col">Ordered By</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Items</th>
+                    <th scope="col">Total</th></tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    {% for o in orders %}
+                    <td> {{o.orderid}}</td>
+                    <td> {{o.username}}</td>
+                    <td> {{o.order_date}}</td>
+                    <td> {{o.items}}</td>
+                    <td> {{o.cost}}</td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+          
+      </div>
+       
+
+    
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+  </body>
+</html>

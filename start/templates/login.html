@@ -1,0 +1,52 @@
+
+{% import "bootstrap/wtf.html" as wtf %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <title>Harold's Chicken</title>
+  </head>
+  <body >
+
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: #DC3545	
+    ;">
+        <a class="navbar-brand" href="/"><img src="/static/logo1.png"  height=40px></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav" >
+          <a href="/signup" class="btn btn-outline-light" style="margin-left: 20px;">Sign Up</a>
+        </div>
+      </nav>
+    <div class="container-fluid">
+
+      <div class="jumbotron" style="background-image:  linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(static/harolds.jpg);
+      background-size: cover; margin-top: 20px;
+    ">
+    <img src="/static/logo1.png"  height=80px style="padding-bottom: 20px;">
+        <h1 class="display-6 text-white"><b>Order Harold's Chicken Now!</b></h1>
+        <p class="lead text-white">Enjoy Chicago's best fried chicken! Sign up to order and receive special deals and points!</p>
+        
+      </div>
+
+      <form class="form-signin" method="POST" action="/login">
+        <h2 class="form-signin-heading">Please sign in</h2>
+        {{ form.hidden_tag() }}
+        {{ wtf.form_field(form.username) }}
+        {{ wtf.form_field(form.password) }}
+        {{ wtf.form_field(form.remember) }}
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      </form>
+
+    </div> <!-- /container -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+
+
